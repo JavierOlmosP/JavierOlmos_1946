@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include "arrays.h"
+#include "../Librerias/arrays.h"
 using namespace std;
 using namespace vectorn;
-
 
 int main(){
 	srand(time(0));
@@ -39,8 +38,3 @@ int main(){
     }
     return 0;
 }
-
-
-
-
-
