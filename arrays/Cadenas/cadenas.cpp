@@ -11,13 +11,12 @@ int longitudCadena(char cad[]){
     return contador; 
 }
 int contarPalabras(char cad[]){
-    int palabras = 0;
-    bool palabra = false;
+    int palabras = 0, aux[];
     for(int i = 0; cad[i] != '\0';i++){
         if(cad[i] == ' ' && (cad[i+1] != ' ' && (cad[i+1] != '\0'))){
             palabras++;
-            palabra = true;
         }
+    
     }
     (palabra) ? palabras++:palabras;
     return palabras;
