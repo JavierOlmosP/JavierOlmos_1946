@@ -15,13 +15,14 @@ int main(){
     bool ordena = true;
     cout << "Ingrese la cantidad de estudiantes que desea ingresar: "; cin >> ne;
     estudiante estudiantes[ne], aux;
+    cin.ignore();
     for(int i = 0;i < ne;i++){
-        cout << "Ingrese el id del estudiante: "; cin >> estudiante[i].id;
-        cout << "Ingrese el nombre del estudiante: "; getline(cin, estudiante[i].nombre);
-        cout << "Ingrese la nota del estudiante: "; cin >> estudiante[i].notap;
+        cout << "Ingrese el id del estudiante: "; cin >> estudiantes[i].id; cin.ignore();
+        cout << "Ingrese el nombre del estudiante: "; getline(cin, estudiantes[i].nombre);
+        cout << "Ingrese la nota del estudiante: "; cin >> estudiantes[i].notap;
     }
     cout << "Datos Ingresados: " << endl;
-    cout << setw(3) << "ID" << setw(12) << "Nombres" << setw(15) << "Nota" << endl;
+    cout << setw(3) << "ID" << setw(12) << "NOMBRES" << setw(15) << "NOTA" << endl;
     for(int i = 0;i < ne;i++){
         cout << setw(3);
         cout << estudiantes[i].id << setw(12);
@@ -29,8 +30,8 @@ int main(){
         cout << estudiantes[i].notap << endl;
         suma += estudiantes[i].notap;
     }
-    cout << "Promedio de notas = " << (float)suma/ne << endl;
-    cout << "Listado de estudiantes de mayor nota a menor nota: " << endl;
+    cout << "\nPromedio de notas = " << (float)suma/ne << endl;
+    cout << "\nListado de estudiantes de mayor nota a menor nota: " << endl;
     for(int i = 0;i < ne - 1 && ordena;i++){
         ordena = false;
         for(int j = 0;j < ne;j++){
