@@ -7,8 +7,8 @@ void llenarvector(int v[], int n){
     srand(time(NULL));
     for (int i = 0; i < n; i++)
     {
-        v[i] = rand()%20+1;
-        //cin>>v[i];
+        //v[i] = rand()%20+1;
+        cin>>v[i];
     }
 }
 
@@ -22,7 +22,7 @@ void muestravector(int v [], int n)
 
 int insercion(int v[], int n){
     int cont = 0, aux;
-    for(int i = 1;i < n - 1;i++){
+    for(int i = 1;i < n;i++){
         aux = v[i];
         int j = i - 1;
         while(j >= 0){
@@ -47,6 +47,6 @@ int main(){
     comparaciones = insercion(vec, ne);
     cout << "\nVector Ordenado: " << endl;
     muestravector(vec, ne);
-    cout << "\nEl numero de comparaciones = " << comparaciones;
+    cout << "\nEl nro de comparaciones = " << comparaciones;
     return 0; 
 }

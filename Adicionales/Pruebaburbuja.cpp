@@ -1,34 +1,34 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+
 using namespace std;
  
-void llenarvector(int v[], int n){
+ void llenarvector(int v[], int n){
     srand(time(NULL));
-    for (int i = 0; i < n; i++){
+    for (int i = 0; i < n; i++)
+    {
         //v[i] = rand()%20+1;
         cin>>v[i];
-	}
-}
-
-void muestravector(int v [], int n){
-	for (int i = 0; i < n; i++){
-        cout<<v[i]<<" ";
-    }    
-}
-
-void clonarVector(int origen[], int destino[], int n){
-	for (int i = 0; i < n; i++){
-		destino[i] = origen[i];
-	}
-}
+    }
+ }
  
-int ordenarburbujav1(int v[], int n){	
+int ordenarburbujav1(int v[], int n)
+{	
     int aux, contador = 0;
-    for (int i = 0; i < n;i++){
-    	for (int j = 0; j < n-1; j++){
+	cout << "vector recibido: " <<endl;
+	for(int i=0; i<n;i++)
+	{
+		cout << v[i] << " "; 
+	}
+	cout<<endl;
+    for (int i = 0; i < n;i++)
+	{
+    	for (int j = 0; j < n-1; j++)
+		{
         	contador++;
-        	if (v[j] > v[j+1]){
+        	if (v[j] > v[j+1])
+			{
             	aux = v[j];
             	v[j]=v[j+1];
             	v[j+1] = aux;
@@ -38,17 +38,22 @@ int ordenarburbujav1(int v[], int n){
 	return contador;
 }
 
-int ordenarburbujav2(int v[], int n){	
+int ordenarburbujav2(int v[], int n)
+{	
 	int aux, contador = 0, mejora = 1; 
 	cout << "vector recibido: " <<endl;
-	for(int i=0; i<n;i++){
+	for(int i=0; i<n;i++)
+	{
 		cout << v[i] << " "; 
 	}
 	cout<<endl;
-    for (int i = 0; i < n;i++){
-    	for (int j = 0; j < n-mejora; j++){
+    for (int i = 0; i < n;i++)
+	{
+    	for (int j = 0; j < n-mejora; j++)
+		{
         	contador++;
-        	if (v[j] > v[j+1]){
+        	if (v[j] > v[j+1])
+			{
             	aux = v[j];
             	v[j]=v[j+1];
             	v[j+1] = aux;
@@ -59,19 +64,24 @@ int ordenarburbujav2(int v[], int n){
 	return contador;
 }
 
-int ordenarburbujav3(int v[], int n){	
+int ordenarburbujav3(int v[], int n)
+{	
     int aux, contador = 0, mejora = 1;
     bool cambio=true;
     cout << "vector recibido: " <<endl;
-	for(int i=0; i<n;i++){
+	for(int i=0; i<n;i++)
+	{
 		cout << v[i] << " "; 
 	}
 	cout<<endl;
-    for (int i = 0; i < n && cambio;i++){
+    for (int i = 0; i < n && cambio;i++)
+	{
 		cambio=false;
-    	for (int j = 0; j < n-mejora; j++){
+    	for (int j = 0; j < n-mejora; j++)
+		{
         	contador++;
-        	if (v[j] > v[j+1]){
+        	if (v[j] > v[j+1])
+			{
             	aux = v[j];
             	v[j]=v[j+1];
             	v[j+1] = aux;
@@ -83,29 +93,54 @@ int ordenarburbujav3(int v[], int n){
 	return contador;
 }
 
-int ordenarburbujav4(int v[], int n){ //Una mejora de mi autoria	
+int ordenarburbujav4(int v[], int n) //Una mejora de mi autoria
+{	
     int aux, contador = 0;
     cout << "vector recibido: " <<endl;
-	for(int i=0; i<n;i++){
+	for(int i=0; i<n;i++)
+	{
 		cout << v[i] << " "; 
 	}
 	cout<<endl;
-    for (int i = 0; i < n;i++){
-    	for (int j = 0; j < n-1; j++){
+    for (int i = 0; i < n;i++)
+	{
+    	for (int j = 0; j < n-1; j++)
+		{
         	contador++;
-        	if (v[j] > v[j+1]){
+        	if (v[j] > v[j+1])
+			{
             	aux = v[j];
             	v[j]=v[j+1];
             	v[j+1] = aux;
+            	
     		}	
     	}
 		return contador;	
 	}	
+	
 }
 
-int main(){
+void muestravector(int v [], int n)
+{
+	for (int i = 0; i < n; i++)
+    {
+        cout<<v[i]<<" ";
+    }    
+}
+
+void clonarVector(int origen[], int destino[], int n) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		destino[i] = origen[i];
+	}
+}
+
+ main()
+ {
     int ne;
-    cout<<"numeros de elementos: "; cin>> ne;
+    cout<<"numeros de elementos: ";
+    cin>> ne;
     int vec[ne], original[ne];
     llenarvector(vec,ne);
     cout<<"vector original: ";
@@ -121,5 +156,10 @@ int main(){
     cout<<"\nEl numero de comparaciones burbuja v4 = " << ordenarburbujav4(original,ne)<<endl;
     cout<<"vector ordenado: "<<endl;
     muestravector(original,ne);
+    
+
+
+
+
 	return 0;
 }
